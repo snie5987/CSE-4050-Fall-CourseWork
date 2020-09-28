@@ -57,14 +57,6 @@ h2 {
   font-size: 15px;
   font-family: Chalkduster, fantasy;
 }
-.center2 {
-  float: center;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  font-size: 15px;
-  font-family: Chalkduster, fantasy;
-}
 h3 {
   text-align: center;
   text-decoration: none;
@@ -74,33 +66,6 @@ h3 {
   padding-top: 40px;
 }
 .footer {
-  float: center;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  font-size: 15px;
-  text-decoration: none;
-  font-family: Chalkduster, fantasy;
-}
-.footer2 {
-  float: center;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  font-size: 15px;
-  text-decoration: none;
-  font-family: Chalkduster, fantasy;
-}
-.footer3 {
-  float: center;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  font-size: 15px;
-  text-decoration: none;
-  font-family: Chalkduster, fantasy;
-}
-.footer4 {
   float: center;
   margin-left: auto;
   margin-right: auto;
