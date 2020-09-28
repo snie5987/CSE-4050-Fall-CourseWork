@@ -1,0 +1,89 @@
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: whitesmoke;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 16px;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: Chalkduster, fantasy;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: gray;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #1F456E;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  font-family: Chalkduster, fantasy;
+  font-size: 60px;
+  color: white;
+}
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  font-family: Chalkduster, fantasy;
+  font-size: 40px;
+  color: white;
+  padding-top: 40px;
+}
+h3, h4, h5 {
+  text-align: center;
+  text-decoration: underline;
+  font-family: Chalkduster, fantasy;
+  font-size: 30px;
+  color: white;
+  padding-top: 40px;
+}
+.center {
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 15px;
+  font-family: Chalkduster, fantasy;
+}
+h6 {
+  text-align: center;
+  text-decoration: none;
+  font-family: Chalkduster, fantasy;
+  font-size: 20px;
+  color: white;
+  padding-top: 40px;
+}
+.footer {
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Chalkduster, fantasy;
+}
+.logo {
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+}
