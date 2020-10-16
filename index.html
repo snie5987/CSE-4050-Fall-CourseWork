@@ -1,93 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <!-- Website for Icons in navigation bar -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+	  <link rel="stylesheet" type="text/css" href="loginPage.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
-    <!-- Background Image -->
-    <style>
-      body {
-      background-image: url('/Photos/Blackboard.jpg');
-      background-repeat: no-repeat;
-      background-attachment: fixed; 
-      background-size: 100% 100%;
-      }
-    </style>
-    <!-- Logo -->
-    <img src="PetsUnleashed Logo.png" width="150px" height="150px" >
-    <h1> Pets Unleashed </h1>
-    <!-- Navigation Bar credit:https://www.w3schools.com/howto/howto_js_topnav.asp -->
-    <div class="navbar">
-      <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
-      <a href="shop.html"><i class="fa fa-paw" aria-hidden="true"></i> Shop</a>
-      <a href="contactUs.html"><i class="fa fa-fw fa-envelope"></i> Contact Us</a> 
-      <a href="#"><i class="fa fa-info-circle"></i> About Us </a>
-    </div>
-    <h2> Featured Items </h2>
-    <table class="center" width="500px" border="0" cellpadding="5"  >
-      <tr>
-        <td align="center" valign="center">
-          <img src="DogBone.jpg" width="150px" height="150px" />
-          <br /> Dog Bones <br /> $3.99
-          </td>
-          <td align="center" valign="center">
-            <img src="CatNip.jpeg"  width="150px" height="150px"/>
-            <br /> Cat Nip <br /> $4.99
-            </td>
-            <td align="center" valign="center">
-              <img src="HamsterBall.jpg" width="150px" height="150px"/>
-              <br /> Hamster Ball <br /> $2.99
-            </tr>
-            </table>
-    <table class= "center" width="500px" boarder="0" cellpadding="5" >
-      <tr>
-        <td align="center" valign="center">
-          <img src="DogFood.jpeg" width="150px" height="150px" />
-          <br /> Dog Food <br /> $11.99
-          </td>
-        <td align="center" valign="center">
-          <img src="CatFood.jpg" width="150px" height="150px" />
-          <br /> Cat Food <br /> $10.99
-          </td>
-        <td align="center" valign="center">
-          <img src="HamsterFood.jpg" width="150px" height="150px" />
-          <br /> Hamster Food <br /> $7.99
-          </td>
-          </table>
-          <h3> Pets Unleashed </h3> <br />
-    <table class="footer" boarder="0" cellpadding="5" >
-      <tr>
-        <td align="center" valign="center">
-          <b class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</b>
-        </td>
-        </table>
-    <table class="footer" boarder="0" cellpadding="5" >
-      <tr>
-        <td align="center" valign="center">
-          <b href="#"><i class="fa fa-paw" aria-hidden="true"></i> Shop</b>
-          </td>
-    <table class="footer" boarder="0" cellpadding="5" >
-      <tr>
-        <td align="center" valign="center">
-          <b href="#"><i class="fa fa-fw fa-envelope"></i> Contact Us</b>
-          </td>
-    <table class="footer" boarder="0" cellpadding="5" >
-      <tr>
-        <td align="center" valign="center">
-          <b href="#"><i class="fa fa-info-circle"></i> About Us </b>
-        </td>
-        </table>
-        <br />
-        <table class="logo" boarder="0" cellpadding="5" >
-          <tr>
-            <td align="center" valign="center">
-            <img src="PetsUnleashed Logo.png" width="50px"
-     height="50px" >
-     </td>
-     </table>
-  </body>
+<body>
+	<div class="limiter">
+		<div class="containerLogin">
+			<div class="wrapLogin">
+				<div class="loginPic">
+					<img src="Photos/PetsUnleashed Logo.png">
+				</div>
+				<form action="" class="loginForm" id="myform" onsubmit="return accountValidate();">
+					<span class="loginFormHeader">
+						PetsUnleashed
+					</span>
+					<span class="loginFormSubheader">
+						Member Login
+					</span>
+          <div id="error_message">
+          </div>
+					<div class="wrapInput">
+						<input class="input" type="text" name="loginEmail" id="email" placeholder="Email">
+						<span class="symbolInput">
+							<i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrapInput">
+						<input class="input" id="pass" type="password" name="loginPass" placeholder="Password">
+						<span class="symbolInput">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="containerLoginFormButton">
+						<button class="loginFormButton">
+							Login <i class="fa fa-sign-in" aria-hidden="true"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+  <script src="accountCheck.js"></script>
+</body>
 </html>
