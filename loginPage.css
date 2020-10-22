@@ -22,12 +22,6 @@ button {
 iframe {
 	border: none !important;
 }
-.createAccountText {
-  font-family: Chalkduster;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #666666;
-}
 .limiter{
   width: 100%;
   margin: 0 auto;
@@ -57,9 +51,6 @@ iframe {
 }
 .loginPic img {
   max-width: 100%;
-}
-.registerForm{
-  width: 290px;
 }
 .loginForm {
   width: 290px;
@@ -105,7 +96,10 @@ iframe {
   border-radius: 25px;
   padding: 0 30px 0 68px;
 }
-
+.checkboxText {
+  font-family: Chalkduster;
+  font-size: 15px;
+}
 .symbolInput {
   font-size: 15px;
   display: flex;
