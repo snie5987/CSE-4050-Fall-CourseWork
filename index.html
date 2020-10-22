@@ -13,29 +13,32 @@
 				<div class="loginPic">
 					<img src="Photos/PetsUnleashed Logo.png">
 				</div>
-				<form action="" class="loginForm" id="myform" onsubmit="return accountValidate();">
+				<form action="" class="loginForm" id="myform">
 					<span class="loginFormHeader">
 						PetsUnleashed
 					</span>
 					<span class="loginFormSubheader">
 						Member Login
 					</span>
-          <div id="error_message">
-          </div>
+					<div id="error_message">
+					</div>
 					<div class="wrapInput">
-						<input class="input" type="text" name="loginEmail" id="email" placeholder="Email">
+						<input class="input" type="text" name="loginEmail" id="emailLogin" placeholder="Email">
 						<span class="symbolInput">
 							<i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
 					<div class="wrapInput">
-						<input class="input" id="pass" type="password" name="loginPass" placeholder="Password">
+						<input class="input" id="pass" type="password" name="passLogin" placeholder="Password">
 						<span class="symbolInput">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
+          				<div class "wrapInput">
+						<input type="checkbox" onclick="showPass()" >Show Password<br/> <br/>
+					</div>
 					<div class="containerLoginFormButton">
-						<button class="loginFormButton">
+						<button class="loginFormButton" onclick="return accountValidate();">
 							Login <i class="fa fa-sign-in" aria-hidden="true"></i>
 						</button>
 					</div>
