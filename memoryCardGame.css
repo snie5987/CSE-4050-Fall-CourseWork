@@ -1,0 +1,60 @@
+.navbar {
+  width: 100%;
+  background-color: gray;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img{
+  width: 180px;
+  margin-top: 5px;
+}
+h1{
+  font-size: 20px;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+h2{
+  font-size: 20px;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 10px;
+  width:25%;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.navbar a:hover {
+  background-color: white;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  display: inline;
+}
+#name1 {
+  color: #FFFFFF;
+  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #bf1a2c 0px 0px 20px, #bf1a2c 0px 0px 30px, #bf1a2c 0px 0px 40px, #bf1a2c 0px 0px 50px, #bf1a2c 0px 0px 75px;
+  font-size: 40px;
+  font-family: 'Press Start 2P', cursive;
+  padding-left: 20px;
+  display: inline;
+}
+#name2 {
+  color: #FFFFFF;
+  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #004aad 0px 0px 20px, #004aad 0px 0px 30px, #004aad 0px 0px 40px, #004aad 0px 0px 50px, #004aad 0px 0px 75px;
+  font-size: 40px;
+  font-family: 'Press Start 2P', cursive;
+  padding-left: 200px;
+  display: inline;
+}

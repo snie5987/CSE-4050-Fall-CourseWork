@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="memoryCardGame.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4be9d634f6.js" crossorigin="anonymous"></script>
+    <script defer src="/__/firebase/7.24.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.24.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+  </head>
+  <body style ="background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed; background-image: url(blackBrickWall.jpg);">
+  	<img src="playingCard.png" style="width: 120px;">
+  	<div id="name1">Memory</div> <br/>
+  	<div id="name2">Master</div>
+    <div class="navbar">
+    	<ul id="nav-mobile" class="right hide-on-med-and-down">
+    		<li class="logged-in">
+    			<a href="#" class="modal-trigger" data-target="modal-account" ><i class="fa fa-id-card-o"></i> <br/> Account</a>
+    		</li>
+    		<li class="logged-in">
+    			<a href="#" id="logout" ><i class="fa fa-sign-out" aria-hidden="true"></i> <br/> Logout</a>
+    		</li>
+    		<li class="logged-out">
+    			<a href="#" class="modal-trigger" data-target="modal-login" ><i class="fa fa-sign-in"></i><br/> Login</a>
+    		</li>
+    		<li class="logged-out">
+    			<a href="#" class="modal-trigger" data-target="modal-signup" ><i class="fa fa-user-plus"></i> <br/> Sign up</a>
+    		</li>
+    	</ul>
+    </div>
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn #004aad z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+      <div class="account-extras"></div>
+    </div>
+  </div>
+  </div>
+	<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+	<script>
+  	var firebaseConfig = {
+    	apiKey: "AIzaSyABCwL6fvfWD5quElDPI7Kiz63kY_MujKk",
+    	authDomain: "memorycardgame-a3092.firebaseapp.com",
+    	databaseURL: "https://memorycardgame-a3092.firebaseio.com",
+    	projectId: "memorycardgame-a3092",
+    	storageBucket: "memorycardgame-a3092.appspot.com",
+    	messagingSenderId: "124654919131",
+    	appId: "1:124654919131:web:f9d51a65c5ecb7b3255bfe",
+    	measurementId: "G-E7SBCCPFCE"
+  	};
+  	firebase.initializeApp(firebaseConfig);
+  	firebase.analytics();
+
+  	const auth = firebase.auth();
+  	const db = firebase.firestore();
+
+  	db.settings({ timestampsInSnapshot: true });
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" ></script>
+    <script src="memoryCardGame.js" ></script>
+    <script src="auth.js" ></script>
+  </body>
+</html>
