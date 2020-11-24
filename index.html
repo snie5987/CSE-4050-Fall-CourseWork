@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="memoryCardGame.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/4be9d634f6.js" crossorigin="anonymous"></script>
+    <script defer src="/__/firebase/7.24.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.24.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+  </head>
+  <body style ="background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed; background-image: url(blackBrickWall.jpg);">
+  	<img src="playingCard.png" style="width: 120px;">
+  	<div id="name1">Memory</div> <br/>
+  	<div id="name2">Master</div>
+    <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account"><i class="fa fa-id-card-o"></i> Account</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="grey-text" id="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login"><i class="fa fa-sign-in"></i> Login</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup"><i class="fa fa-user-plus"></i> Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn #004aad z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+      <div class="account-extras"></div>
+    </div>
+  </div>
+  </div>
+  <!-- CREATE GUIDE MODAL -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Create Guide</h4><br />
+      <form id="create-form">
+        <div class="input-field">
+          <input type="text" id="title" required>
+          <label for="title">Guide Title</label>
+        </div>
+        <div class="input-field">
+          <textarea id="content" class="materialize-textarea" required></textarea>
+          <label for="content">Guide Content</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- GUIDE LIST -->
+  <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+    	
+    </ul>
+  </div>
+      <div class="container">
+
+        <section class="score-panel">
+          <span class="moves">0</span> Move(s)
+
+            <div class="timer">
+            </div>
+
+            <div class="restart" onclick=startGame()>
+            <i class="fa fa-repeat"></i>
+          </div>
+        </section>
+
+        <ul class="deck" id="card-deck">
+            <li class="card" type="diamond">
+                <i class="fa fa-diamond"></i>
+            </li>
+            <li class="card" type="plane">
+                <i class="fa fa-paper-plane-o"></i>
+            </li>
+            <li class="card match" type="anchor">
+                <i class="fa fa-anchor"></i>
+            </li>
+            <li class="card" type="bolt" >
+                <i class="fa fa-bolt"></i>
+            </li>
+            <li class="card" type="cube">
+                <i class="fa fa-cube"></i>
+            </li>
+            <li class="card match" type="anchor">
+                <i class="fa fa-anchor"></i>
+            </li>
+            <li class="card" type="leaf">
+                <i class="fa fa-leaf"></i>
+            </li>
+            <li class="card" type="bicycle">
+                <i class="fa fa-bicycle"></i>
+            </li>
+            <li class="card" type="diamond">
+                <i class="fa fa-diamond"></i>
+            </li>
+            <li class="card" type="bomb">
+                <i class="fa fa-bomb"></i>
+            </li>
+            <li class="card" type="leaf">
+                <i class="fa fa-leaf"></i>
+            </li>
+            <li class="card" type="bomb">
+                <i class="fa fa-bomb"></i>
+            </li>
+            <li class="card open show" type="bolt">
+                <i class="fa fa-bolt"></i>
+            </li>
+            <li class="card" type="bicycle">
+                <i class="fa fa-bicycle"></i>
+            </li>
+            <li class="card" type="plane">
+                <i class="fa fa-paper-plane-o"></i>
+            </li>
+            <li class="card" type="cube">
+                <i class="fa fa-cube"></i>
+            </li>
+        </ul>
+
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Congratulations 🎉</h2>
+                <a class="close" href=# >×</a>
+                <div class="content-1">
+                    Congratulations you're a winner 🎉🎉
+                </div>
+                <div class="content-2">
+                    <p>You made <span id=finalMove> </span> moves </p>
+                    <p>in <span id=totalTime> </span> </p>
+                    <p>Rating:  <span id=starRating></span></p>
+                </div>
+                <button id="play-again"onclick="playAgain()">
+                    Play again 😄</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+	<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+	<script>
+  	var firebaseConfig = {
+    	apiKey: "AIzaSyABCwL6fvfWD5quElDPI7Kiz63kY_MujKk",
+    	authDomain: "memorycardgame-a3092.firebaseapp.com",
+    	databaseURL: "https://memorycardgame-a3092.firebaseio.com",
+    	projectId: "memorycardgame-a3092",
+    	storageBucket: "memorycardgame-a3092.appspot.com",
+    	messagingSenderId: "124654919131",
+    	appId: "1:124654919131:web:f9d51a65c5ecb7b3255bfe",
+    	measurementId: "G-E7SBCCPFCE"
+  	};
+  	firebase.initializeApp(firebaseConfig);
+  	firebase.analytics();
+
+  	const auth = firebase.auth();
+  	const db = firebase.firestore();
+
+  	db.settings({ timestampsInSnapshot: true });
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" ></script>
+    <script src="memoryCardGame.js" ></script>
+    <script src="auth.js" ></script>
+  </body>
+</html>
